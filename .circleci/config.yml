@@ -16,6 +16,7 @@ workflows:
           cron: "15 1 0 0 0"
           filters:
             branches:
-              - master
+              only:
+                - master
     jobs:
       - test
