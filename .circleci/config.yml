@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/python:3.8.2
+    steps:
+      - checkout
+      - run:
+          command: |
+            echo "Hello world"
+workflows:
+  version: 2
+  nightly:
+    triggers:
+      - schedule:
+          cron: "15 1 0 0 0"
+          filters:
+            branches:
+              - master
+    jobs:
+      - test
