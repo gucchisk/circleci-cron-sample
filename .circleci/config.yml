@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - run:
+          name: hello
           command: |
             echo "Hello world"
 workflows:
@@ -13,7 +14,7 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "15 1 0 0 0"
+          cron: "19 16 * * *"
           filters:
             branches:
               only:
